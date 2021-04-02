@@ -10,8 +10,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         PlayerRb.freezeRotation = true;
-        PlayerRb.position = new Vector3(49.5f, 0f, 0f);
-        PlayerRb.rotation = Quaternion.Euler(-90f, 0f, 0f);
+        transform.position = new Vector3(49.5f, 0f, 0f);
+        transform.rotation = Quaternion.Euler(-90f, 0f, 0f);
     }
 
     void FixedUpdate()
@@ -25,10 +25,14 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.Translate(Vector3.up);
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (transform.position.y <= 0.05 && transform.position.y >= -0.05)
         {
-            Debug.Log("Sprung");
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                PlayerRb.AddForce(0f, 1000f, 0f);
+            }
         }
+
 
     }
     // Update is called once per frame
