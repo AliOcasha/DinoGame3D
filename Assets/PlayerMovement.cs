@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     bool Jump = false;
     int direction = 0;
 
+    Vector3 BasPos = new Vector3(49.5f, 0f, 0f);
+    Quaternion BasRot = Quaternion.Euler(-90f, 0f, 0f);
+
     void Start()
     {
         // Player Set Up
@@ -18,63 +21,70 @@ public class PlayerMovement : MonoBehaviour
         PlayerRb.mass = 3;
         PlayerRb.useGravity = true;
 
-        transform.position = new Vector3(49.5f, 0f, 0f);
-        transform.rotation = Quaternion.Euler(-90f, 0f, 0f);
+        transform.position = BasPos;
+        transform.rotation = BasRot;
     }
 
     void FixedUpdate()
     {
-        // Processing "Left/Right" Input
         int Move_x = (int)Input.GetAxisRaw("Horizontal");
-        if (Move_x == 1)
-        {
-            Movement_x = true;
-            direction = -1;
-        }
-        if (Move_x == -1)
-        {
-            Movement_x = true;
-            direction = 1;
-        }
-
-        // Processing Spacebar Input and Forbidding Mid-Air Jumps
         if (transform.position.y <= 0.05 && transform.position.y >= -0.05)
-        {
+        {  
+            //Processing Horizontal Input
+            if (Move_x == 1)
+            {
+                Movement_x = true;
+                direction = -1;
+            }
+            else if (Move_x == -1)
+            {
+                Movement_x = true;
+                direction = 1;
+            }
+            else
+            {
+                 Movement_x = false;
+                 direction = 0;
+            }        
+       
+            // Processing Spacebar Input
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Jump = true;
             }
+            else
+            {
+                Jump = false;
+            }
         }
-
-
-
-
     }
 
     void Update()
     {
+        float Boundary = 9.5f;
+        float JumpStrength = 1000f;
+        Vector3 Move = Vector3.up * direction / 4;
+
         // Movement, depending on Input, via Translation
         if (Movement_x == true)
         {
-            transform.Translate(Vector3.up * direction / 4);
-            Movement_x = false;
-            direction = 0;
+            transform.Translate(Move);
         }    
         
         // Jump via Force
-        if (Jump == true)
+        else if (Jump == true)
         {
-            PlayerRb.AddForce(0f, 1000f, 0f);
+            PlayerRb.AddForce(0f, JumpStrength, 0f);
         }
         
         // Boundaries on Plane of Scale 2
-        if (transform.position.z <= -9.5)
+        if (transform.position.z <= -Boundary)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, -9.5f);
+            transform.position = new Vector3(transform.position.x, transform.position.y, -Boundary);
         }
-        if (transform.position.z >= 9.5)
+        if (transform.position.z >= Boundary)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, 9.5f);
+            transform.position = new Vector3(transform.position.x, transform.position.y, Boundary);
         }
     }
 }
