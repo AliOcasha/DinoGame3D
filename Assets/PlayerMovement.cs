@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody PlayerRb;
-    public Transform Platform;
 
     bool Movement_x = false;
     bool Jump = false;
@@ -25,10 +24,11 @@ public class PlayerMovement : MonoBehaviour
         transform.rotation = BasRot;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         int Move_x = (int)Input.GetAxisRaw("Horizontal");
-        if (transform.position.y <= 0 && transform.position.y >= -0.05)
+        // Forbidding Mid-Air Movement
+        if (transform.position.y <= -0.045)
         {  
             //Processing Horizontal Input
             if (Move_x == 1)
@@ -52,17 +52,13 @@ public class PlayerMovement : MonoBehaviour
             {
                 Jump = true;
             }
-            else
-            {
-                Jump = false;
-            }
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         float Boundary = 9.5f;
-        float JumpStrength = 1000f;
+        float JumpStrength = 75000f;
         Vector3 Move = Vector3.up * direction / 4;
 
         // Movement, depending on Input, via Translation
@@ -74,7 +70,8 @@ public class PlayerMovement : MonoBehaviour
         // Jump via Force
         else if (Jump == true)
         {
-            PlayerRb.AddForce(0f, JumpStrength, 0f);
+            PlayerRb.AddForce(0f, JumpStrength * Time.deltaTime, 0f);
+            Jump = false;
         }
         
         // Boundaries on Plane of Scale 2
