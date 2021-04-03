@@ -83,5 +83,6 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, Boundary);
         }
+        transform.Translate(Vector3.left / 4);
     }
 }
