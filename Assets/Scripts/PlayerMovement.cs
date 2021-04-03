@@ -59,12 +59,14 @@ public class PlayerMovement : MonoBehaviour
     {
         float Boundary = 9.5f;
         float JumpStrength = 75000f;
-        Vector3 Move = Vector3.up * direction / 4;
+        Vector3 side_Move = Vector3.up * direction / 4;
+        Vector3 forward_Move = Vector3.right / 4;
+
 
         // Movement, depending on Input, via Translation
         if (Movement_x == true)
         {
-            transform.Translate(Move);
+            transform.Translate(side_Move);
         }    
         
         // Jump via Force
@@ -83,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, Boundary);
         }
-        transform.Translate(Vector3.left / 4);
+        // No Matter What KEEP PUSHING FORWARD
+        transform.Translate(forward_Move);
     }
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 public class GroundTiles : MonoBehaviour
 {
     Spawner GroundSpawner;
-    // Start is called before the first frame update
     void Start()
     {
         GroundSpawner = GameObject.FindObjectOfType<Spawner>();
@@ -13,10 +12,11 @@ public class GroundTiles : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
+        // Spawning Tiles on Trigger
         GroundSpawner.SpawnTile();
+        // Destroying them after player passed them
         Destroy(gameObject, 2);
     }
-    // Update is called once per frame
     void Update()
     {
         

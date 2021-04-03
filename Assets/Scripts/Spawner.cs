@@ -9,12 +9,14 @@ public class Spawner : MonoBehaviour
 
     public void SpawnTile()
     {
+        // Tile Spawning
         GameObject temp = Instantiate(Ground, nextSpawnPoint, Quaternion.identity);
         nextSpawnPoint = temp.transform.GetChild(1).transform.position;
     }
 
     void Start()
     {
+        // Set Up Tiles
         for (int i = 0; i < 15; i++)
         {
             SpawnTile();
@@ -22,3 +24,4 @@ public class Spawner : MonoBehaviour
 
     }
 }
+  
