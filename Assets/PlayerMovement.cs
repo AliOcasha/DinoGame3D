@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         int Move_x = (int)Input.GetAxisRaw("Horizontal");
-        if (transform.position.y <= 0.05 && transform.position.y >= -0.05)
+        if (transform.position.y <= 0 && transform.position.y >= -0.05)
         {  
             //Processing Horizontal Input
             if (Move_x == 1)
