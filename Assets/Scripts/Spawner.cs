@@ -12,20 +12,38 @@ public class Spawner : MonoBehaviour
 
     Vector3 nextSpawnPoint = new Vector3(0f, -0.9f, 0f);
     Vector3 O_nextSpawnPoint = new Vector3(-20f, 0.1f, 0f);
+    GameObject Chosen;
 
     public void SpawnTile()
     {
         // Tile Spawning
         GameObject Tile = Instantiate(Ground, nextSpawnPoint, Quaternion.identity);
-        // Setting new Spawnpoint of Tile and Obstacle
         nextSpawnPoint = Tile.transform.GetChild(1).transform.position;
     }
 
     // Obstacle Spawning
     public void SpawnObstacle()
     {
-        GameObject Obstacle = Instantiate(Obstacle1, O_nextSpawnPoint, Quaternion.identity);
-        Instantiate(Trigger, O_nextSpawnPoint, Quaternion.identity);
+        System.Random R = new System.Random();
+        int ObstacleType = R.Next(1, 4);
+        Debug.Log(ObstacleType);
+        switch(ObstacleType)
+        {
+            case 1:
+                Chosen = Obstacle1;
+                break;
+            case 2:
+                Chosen = Obstacle2;
+                break;
+            case 3:
+                Chosen = Obstacle3;
+                break;
+            default:
+                Chosen = Obstacle1;
+                break;
+
+        }
+        GameObject Obstacle = Instantiate(Chosen, O_nextSpawnPoint, Quaternion.identity);
         O_nextSpawnPoint = Obstacle.transform.position + new Vector3(-20f, 0f, 0f);
     }
 
