@@ -4,18 +4,11 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    Spawner ObstacleSpawner;
+    public GameObject Player;
 
-    void Start()
+    void Update()
     {
-        ObstacleSpawner = GameObject.FindObjectOfType<Spawner>();
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        ObstacleSpawner.SpawnObstacle();
-
-        Destroy(gameObject, 2);
+        Destroy(gameObject, 30);
     }
 
 

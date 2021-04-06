@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
-    public GameObject Ground;
     public PlayerMovement Movement;
 
     void Start()
@@ -15,7 +14,7 @@ public class PlayerCollision : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         // If it collides it something other then the ground the PlayerMovement is disabled
-        if (collision.collider.tag != Ground.tag)
+        if (collision.collider.tag == "Obstacle")
         {
             Movement.enabled = false;
         }

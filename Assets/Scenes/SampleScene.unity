@@ -140,7 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e67fb4200f3e7c547bf69dc7154a0962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ground: {fileID: 592464227117632348, guid: 7a8ea7d2e138ac040a989df0b59c1840, type: 3}
   Movement: {fileID: 239926437}
 --- !u!114 &239926437
 MonoBehaviour:
@@ -223,6 +222,7 @@ MonoBehaviour:
   Obstacle1: {fileID: 641427824696306945, guid: 67906ac0cc8dcf9408427473ead18f6e, type: 3}
   Obstacle2: {fileID: 3736912293421201093, guid: 831d42a7f37d29841b0dea8b6c87072d, type: 3}
   Obstacle3: {fileID: 790840530188087482, guid: ae83e50d942d3a542a92759147e6d175, type: 3}
+  Trigger: {fileID: 7637588127296098843, guid: 37430610b5c0a474580bb08c5f455408, type: 3}
 --- !u!4 &656339313
 Transform:
   m_ObjectHideFlags: 0

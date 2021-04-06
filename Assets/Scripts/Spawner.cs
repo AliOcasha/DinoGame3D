@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
     public GameObject Obstacle1;
     public GameObject Obstacle2;
     public GameObject Obstacle3;
+    public GameObject Trigger;
 
     Vector3 nextSpawnPoint = new Vector3(0f, -0.9f, 0f);
     Vector3 O_nextSpawnPoint = new Vector3(-20f, 0.1f, 0f);
@@ -24,7 +25,13 @@ public class Spawner : MonoBehaviour
     public void SpawnObstacle()
     {
         GameObject Obstacle = Instantiate(Obstacle1, O_nextSpawnPoint, Quaternion.identity);
+        Instantiate(Trigger, O_nextSpawnPoint, Quaternion.identity);
         O_nextSpawnPoint = Obstacle.transform.position + new Vector3(-20f, 0f, 0f);
+    }
+
+    public void SpawnTrigger()
+    {
+        Instantiate(Trigger, O_nextSpawnPoint, Quaternion.identity);
     }
 
     void Start()
@@ -34,6 +41,7 @@ public class Spawner : MonoBehaviour
         {
             SpawnTile();
             SpawnObstacle();
+            SpawnTrigger();
         }
 
 
