@@ -220,6 +220,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ground: {fileID: 592464227117632348, guid: 7a8ea7d2e138ac040a989df0b59c1840, type: 3}
+  Obstacle1: {fileID: 641427824696306945, guid: 67906ac0cc8dcf9408427473ead18f6e, type: 3}
+  Obstacle2: {fileID: 3736912293421201093, guid: 831d42a7f37d29841b0dea8b6c87072d, type: 3}
+  Obstacle3: {fileID: 790840530188087482, guid: ae83e50d942d3a542a92759147e6d175, type: 3}
 --- !u!4 &656339313
 Transform:
   m_ObjectHideFlags: 0
@@ -320,13 +323,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.21437877, y: -0.41917366, z: 0.5688898, w: 0.6743142}
-  m_LocalPosition: {x: -17.71, y: 3, z: -10.22}
+  m_LocalRotation: {x: 0.21825327, y: -0.41716936, z: 0.5626176, w: 0.67955625}
+  m_LocalPosition: {x: -15, y: 3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 66.062}
+  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 65}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,7 +408,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.0843369, y: -0.7020593, z: 0.0843369, w: 0.7020593}
-  m_LocalPosition: {x: 54, y: 2.5, z: 0}
+  m_LocalPosition: {x: 4.4, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -438,7 +441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d24682d8dfff618479a103adcd3f19fa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 49.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d24682d8dfff618479a103adcd3f19fa, type: 3}
       propertyPath: m_LocalPosition.y

@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     bool Jump = false;
     int direction = 0;
 
-    Vector3 BasPos = new Vector3(49.5f, 0f, 0f);
+    Vector3 BasPos = new Vector3(0f, 0f, 0f);
     Quaternion BasRot = Quaternion.Euler(-90f, 0f, 0f);
 
     void Start()
@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         float Boundary = 9.5f;
         float JumpStrength = 75000f;
         Vector3 side_Move = Vector3.up * direction / 4;
-        Vector3 forward_Move = Vector3.right / 4;
+        Vector3 forward_Move = Vector3.left / 4;
 
 
         // Movement, depending on Input, via Translation
