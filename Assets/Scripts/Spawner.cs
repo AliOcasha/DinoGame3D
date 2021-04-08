@@ -26,7 +26,6 @@ public class Spawner : MonoBehaviour
     {
         System.Random R = new System.Random();
         int ObstacleType = R.Next(1, 4);
-        Debug.Log(ObstacleType);
         switch(ObstacleType)
         {
             case 1:
