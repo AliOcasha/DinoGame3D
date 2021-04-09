@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
     {
         float Boundary = 9.5f;
         float JumpStrength = 75000f;
-        Vector3 side_Move = Vector3.back * direction / 4;
+        Vector3 side_Move = Vector3.up * direction / 4;
         Vector3 forward_Move = Vector3.left / 4;
 
 
