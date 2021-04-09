@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
-    public PlayerMovement Movement;
+    private PlayerMovement Movement;
 
-    void Start()
+    private void Start()
     {
+        // Getting PlayerMovement Script
+        Movement = gameObject.GetComponent<PlayerMovement>();
         // Enabling the Player Movement at Set Up
         Movement.enabled = true;
     }
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         // If it collides it something other then the ground the PlayerMovement is disabled
         if (collision.collider.tag == "Obstacle")

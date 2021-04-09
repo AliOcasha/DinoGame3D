@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour
 {
-    Spawner TriggerSpawner;
+    private Spawner TriggerSpawner;
 
-    void Start()
+    private void Start()
     {
+        // Get Spawn Script
         TriggerSpawner = GameObject.FindObjectOfType<Spawner>();
     }
 
-    void OnTriggerExit(Collider other)
+    // When Trigger Object is passed
+    private void OnTriggerExit(Collider other)
     {
+        // Spawn a new Obstacle and Trigger
         TriggerSpawner.SpawnObstacle();
         TriggerSpawner.SpawnTrigger();
-
+        // Destroy the current Obstacle 2 seconds after
         Destroy(gameObject, 2);
     }
 }

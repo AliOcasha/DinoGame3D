@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Rigidbody PlayerRb;
+    private Rigidbody PlayerRb;
+    private bool Movement_x = false;
+    private bool Jump = false;
+    private int direction = 0;
+    private Vector3 BasPos = new Vector3(0f, -0.8f, 0f);
+    private Quaternion BasRot = Quaternion.Euler(-90f, 0f, 0f);
 
-    bool Movement_x = false;
-    bool Jump = false;
-    int direction = 0;
-
-    Vector3 BasPos = new Vector3(0f, -0.8f, 0f);
-    Quaternion BasRot = Quaternion.Euler(-90f, 0f, 0f);
-
-    void Start()
+    private void Start()
     {
+        // Getting Rigidbody Component
+        PlayerRb = gameObject.GetComponent<Rigidbody>();
         // Player Set Up
         PlayerRb.freezeRotation = true;
         PlayerRb.mass = 3;
@@ -24,8 +24,10 @@ public class PlayerMovement : MonoBehaviour
         transform.rotation = BasRot;
     }
 
-    void Update()
+    // Processing Inputs
+    private void Update()
     {
+        // Getting Keyboard Input
         int Move_x = (int)Input.GetAxisRaw("Horizontal");
         // Forbidding Mid-Air Movement
         if (transform.position.y <= -0.045)
@@ -55,18 +57,19 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    // Applying Physics and Movements
+    private void FixedUpdate()
     {
         float Boundary = 9.5f;
         float JumpStrength = 75000f;
-        Vector3 side_Move = Vector3.up * direction / 4;
-        Vector3 forward_Move = Vector3.left / 4;
+        Vector3 side_Move = Vector3.up * direction * 75 / 4;
+        Vector3 forward_Move = Vector3.left * 75 / 4;
 
 
         // Movement, depending on Input, via Translation
         if (Movement_x == true)
         {
-            transform.Translate(side_Move);
+            transform.Translate(side_Move * Time.deltaTime);
         }    
         
         // Jump via Force
@@ -86,6 +89,6 @@ public class PlayerMovement : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, Boundary);
         }
         // No Matter What KEEP PUSHING FORWARD
-        transform.Translate(forward_Move);
+        transform.Translate(forward_Move * Time.deltaTime);
     }
 }

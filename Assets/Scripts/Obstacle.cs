@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    public GameObject Player;
-
-    void Start()
+    // Setting Up Obstacle Position
+    private void Start()
     {
         transform.rotation = Quaternion.Euler(0f, 90f, 0f);
     }
 
-    void Update()
+    // Destroying Obstacle 30 seconds after Start
+    private void Update()
     {
         Destroy(gameObject, 30);
     }

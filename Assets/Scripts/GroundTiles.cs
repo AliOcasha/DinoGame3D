@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class GroundTiles : MonoBehaviour
 {
-    Spawner GroundSpawner;
+    private Spawner GroundSpawner;
 
-    void Start()
+    private void Start()
     {
+        // Get Spawn Script
         GroundSpawner = GameObject.FindObjectOfType<Spawner>();
     }
 
+    // When Ground Tile is passed
     void OnTriggerExit(Collider other)
     {
         // Spawning Tiles on Trigger
