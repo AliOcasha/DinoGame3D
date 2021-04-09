@@ -9,6 +9,8 @@ public class Spawner : MonoBehaviour
     public GameObject Trigger;
 
     Vector3 nextSpawnPoint = new Vector3(0f, -0.9f, 0f);
+
+
     Vector3 O_nextSpawnPoint = new Vector3(-20f, 0.1f, 0f);
     Vector3 O_Pos;
     System.Random O_Typ = new System.Random();
@@ -27,7 +29,16 @@ public class Spawner : MonoBehaviour
     public void SpawnObstacle()
     {
         int ObstacleType = O_Typ.Next(0,Obstacles.Length);
-        int ObstacleCount = O_Count.Next(1, 4);
+        int ObstacleCount = 1;
+        if (ObstacleType == 3)
+        {
+            ObstacleCount = O_Count.Next(1, 4);
+        }
+        else
+        {
+            ObstacleCount = O_Count.Next(1, 6);
+        }
+        
         for (int i = 1; i <= ObstacleCount; i++)
         {
             int Pos = Posi.Next(-9, 9);
