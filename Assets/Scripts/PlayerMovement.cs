@@ -10,8 +10,8 @@ public class PlayerMovement : MonoBehaviour
     bool Jump = false;
     int direction = 0;
 
-    Vector3 BasPos = new Vector3(0f, 0f, 0f);
-    Quaternion BasRot = Quaternion.Euler(0f, 0f, 0f);
+    Vector3 BasPos = new Vector3(0f, -0.8f, 0f);
+    Quaternion BasRot = Quaternion.Euler(-90f, 0f, 0f);
 
     void Start()
     {
