@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6136303109578513372}
   - component: {fileID: 4678691927389292982}
   - component: {fileID: 2101069741764816438}
+  - component: {fileID: 5675511229226647509}
   - component: {fileID: 7351012969612879190}
   m_Layer: 0
   m_Name: Cactus 2
@@ -110,6 +111,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6279703944699236819, guid: 1c92ba46c83554b40af7fdad62a393ca, type: 3}
+--- !u!65 &5675511229226647509
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753890952924682791}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 33.87, y: 1.3273494, z: 7.1257353}
+  m_Center: {x: 0.07135904, y: 0, z: 3.5628743}
 --- !u!54 &7351012969612879190
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -13,12 +13,16 @@ public class GroundTiles : MonoBehaviour
     }
 
     // When Ground Tile is passed
-    void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider player)
     {
-        // Spawning Tiles on Trigger
-        GroundSpawner.SpawnTile();
+        if (player.CompareTag("Player"))
+        {
+            // Spawning Tiles on Trigger
+            GroundSpawner.SpawnTile();
 
-        // Destroying them after player passed them
-        Destroy(gameObject, 1);
+            // Destroying them after player passed them
+            Destroy(gameObject, 1);
+        }
+
     }
 }

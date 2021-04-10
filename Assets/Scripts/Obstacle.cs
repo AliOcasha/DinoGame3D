@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    // Setting Up Obstacle Position
+    private Spawner ObstacleSpawner;
+    
     private void Start()
     {
+        ObstacleSpawner = GameObject.FindObjectOfType<Spawner>();
+        // Setting Up Obstacle Position
         transform.rotation = Quaternion.Euler(-90f, 90f, 0f);
     }
-
-    // Destroying Obstacle 30 seconds after Start
-    private void Update()
+    private void OnTriggerExit(Collider player)
     {
-        Destroy(gameObject, 30);
+        if (player.CompareTag("Player"))
+        {
+            ObstacleSpawner.SpawnObstacle();
+            Destroy(gameObject, 2);
+        }
     }
 
 

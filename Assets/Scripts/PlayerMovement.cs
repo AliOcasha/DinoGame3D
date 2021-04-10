@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
     // Applying Physics and Movements
     private void FixedUpdate()
     {
-        float Boundary = 9.5f;
+        float Boundary = 12f;
         float JumpStrength = 100000f;
         Vector3 side_Move = Vector3.up * direction * 75 / 4;
         Vector3 forward_Move = Vector3.left * 75 / 4;
