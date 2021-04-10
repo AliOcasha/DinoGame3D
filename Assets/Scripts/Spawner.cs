@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour
     public GameObject Trigger;
 
     private Vector3 nextSpawnPoint = new Vector3(0f, -0.9f, 0f);
-    private Vector3 O_nextSpawnPoint = new Vector3(-20f, 0.1f, 0f);
+    private Vector3 O_nextSpawnPoint = new Vector3(-60f, 0.1f, 0f);
 
     private System.Random O_Typ = new System.Random();
     private System.Random O_Count = new System.Random();
@@ -63,7 +63,7 @@ public class Spawner : MonoBehaviour
     //Trigger Spawning on Same Position as a Obstacle Line
     public void SpawnTrigger()
     {
-        Instantiate(Trigger, O_nextSpawnPoint, Quaternion.identity);
+        Instantiate(Trigger, nextSpawnPoint, Quaternion.identity);
     }
 
     private void Start()
