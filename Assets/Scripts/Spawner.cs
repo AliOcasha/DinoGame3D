@@ -11,9 +11,9 @@ public class Spawner : MonoBehaviour
     private Vector3 nextSpawnPoint = new Vector3(0f, -0.9f, 0f);
     private Vector3 O_nextSpawnPoint = new Vector3(-60f, 0.1f, 0f);
 
-    private System.Random O_Typ = new System.Random();
-    private System.Random O_Count = new System.Random();
-    private System.Random Posi = new System.Random();
+    private readonly System.Random O_Typ = new System.Random();
+    private readonly System.Random O_Count = new System.Random();
+    private readonly System.Random Posi = new System.Random();
     
     // Tile Spawning
     public void SpawnTile()

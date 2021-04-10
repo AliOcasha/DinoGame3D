@@ -16,7 +16,7 @@ public class PlayerCollision : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // If it collides it something other then the ground the PlayerMovement is disabled
-        if (collision.collider.tag == "Obstacle")
+        if (collision.collider.CompareTag("Obstacle"))
         {
             Movement.enabled = false;
         }
