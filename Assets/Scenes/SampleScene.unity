@@ -155,9 +155,10 @@ MonoBehaviour:
   Ground: {fileID: 592464227117632348, guid: 7a8ea7d2e138ac040a989df0b59c1840, type: 3}
   Obstacles:
   - {fileID: 436833168537854350, guid: afc47d3429ec9f74b977270266a75906, type: 3}
+  - {fileID: 8117027634449195778, guid: fd49a0368152b674d94e1eb1bbdf006e, type: 3}
+  - {fileID: 5615991546572535859, guid: 56a009d03160b4e4492fa467ed4b4be1, type: 3}
   - {fileID: 753890952924682791, guid: f6617e76fce6cb545a6ed657bdbac72f, type: 3}
   - {fileID: 4995871914188167076, guid: e636e5b56b966ba47b8eba2c7c3a0326, type: 3}
-  Trigger: {fileID: 7637588127296098843, guid: 37430610b5c0a474580bb08c5f455408, type: 3}
 --- !u!4 &656339313
 Transform:
   m_ObjectHideFlags: 0

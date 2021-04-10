@@ -6,7 +6,6 @@ public class Spawner : MonoBehaviour
 {
     public GameObject Ground;
     public GameObject[] Obstacles;
-    public GameObject Trigger;
 
     private Vector3 nextSpawnPoint = new Vector3(0f, -0.9f, 0f);
     private Vector3 O_nextSpawnPoint = new Vector3(-60f, -0.9f, 0f);
@@ -33,7 +32,7 @@ public class Spawner : MonoBehaviour
         int ObstacleCount;
 
         // Setting Amount of Obstacles in a Line depending on Type
-        if (ObstacleType == 2)
+        if (ObstacleType == 4)
         {
             ObstacleCount = O_Count.Next(1, 4);
         }
