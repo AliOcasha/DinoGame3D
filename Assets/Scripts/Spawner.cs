@@ -29,20 +29,17 @@ public class Spawner : MonoBehaviour
     {
         GameObject Obstacle;    
         Vector3 O_Pos;
-
-
-
         int ObstacleType = O_Typ.Next(0,Obstacles.Length);
         int ObstacleCount;
 
         // Setting Amount of Obstacles in a Line depending on Type
         if (ObstacleType == 3)
         {
-            ObstacleCount = O_Count.Next(1, 4);
+            ObstacleCount = O_Count.Next(1, 3);
         }
         else
         {
-            ObstacleCount = O_Count.Next(1, 6);
+            ObstacleCount = O_Count.Next(1, 4);
         }
         
         // Spawning Obstacles in current Line on random positions
@@ -50,6 +47,7 @@ public class Spawner : MonoBehaviour
         {
             int Pos = Posi.Next(-9, 9);
             O_Pos = new Vector3(O_nextSpawnPoint.x, O_nextSpawnPoint.y, Pos);
+            Debug.Log("Spawned Cactus");
             Obstacle = Instantiate(Obstacles[ObstacleType], O_Pos, Quaternion.identity);
 
             // Only changing Spawnpoint after every obstacle is placed
@@ -63,6 +61,7 @@ public class Spawner : MonoBehaviour
     //Trigger Spawning on Same Position as a Obstacle Line
     public void SpawnTrigger()
     {
+        Debug.Log("Spawned Trigger");
         Instantiate(Trigger, nextSpawnPoint, Quaternion.identity);
     }
 
