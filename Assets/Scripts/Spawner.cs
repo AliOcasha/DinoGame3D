@@ -6,13 +6,17 @@ public class Spawner : MonoBehaviour
 {
     public GameObject Ground;
     public GameObject[] Obstacles;
+    public GameObject Bird;
+    public GameObject Player;
 
     private Vector3 nextSpawnPoint = new Vector3(0f, -0.9f, 0f);
     private Vector3 O_nextSpawnPoint = new Vector3(-60f, -0.9f, 0f);
+    private Vector3 B_nextSpawnPoint = new Vector3 (-1000f, 3f, 0f);
 
     private readonly System.Random O_Typ = new System.Random();
     private readonly System.Random O_Count = new System.Random();
     private readonly System.Random Posi = new System.Random();
+    private readonly System.Random PosB = new System.Random();
     
     // Tile Spawning
     public void SpawnTile()
@@ -56,6 +60,18 @@ public class Spawner : MonoBehaviour
         }
     }
 
+    //Bird Spawning
+    public void SpawnBird()
+    {
+        GameObject Vogel;
+        int Pos = PosB.Next(-11, 11);
+        Vector3 B_Pos = new Vector3(B_nextSpawnPoint.x, B_nextSpawnPoint.y, Pos);
+
+        Vogel = Instantiate(Bird, B_Pos, Quaternion.identity);
+
+        B_nextSpawnPoint = Vogel.transform.position + new Vector3(-500f, 0f, 0f);
+    }
+
     //Trigger Spawning on Same Position as a Obstacle Line
 
     private void Start()
@@ -63,8 +79,17 @@ public class Spawner : MonoBehaviour
         // Set Up Tiles, Obstacles and Triggers
         for (int i = 0; i < 12; i++)
         {
+
             SpawnTile();
             SpawnObstacle();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (Player.transform.position.x <= -500 && Player.transform.position.x >= -500.5)
+        {
+            SpawnBird();
         }
     }
 }
