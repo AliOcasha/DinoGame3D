@@ -7,7 +7,7 @@ public class Obstacle : MonoBehaviour
     // Setting Up Obstacle Position
     private void Start()
     {
-        transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+        transform.rotation = Quaternion.Euler(-90f, 90f, 0f);
     }
 
     // Destroying Obstacle 30 seconds after Start
