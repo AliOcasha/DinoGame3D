@@ -5,17 +5,18 @@ using UnityEngine;
 public class Bird : MonoBehaviour
 {
     private Spawner BirdSpawner;
-    // Start is called before the first frame update
     private void Start()
     {
+        // Get Spawner Script
         BirdSpawner = GameObject.FindObjectOfType<Spawner>();
     }
 
     private void FixedUpdate()
     {
+        // No Matter What KEEP PUSHING BACKWARDS
         gameObject.transform.Translate(Vector3.right * 25 * Time.deltaTime);
     }
-    // Update is called once per frame
+    // Spawn Bird after Passing Player and  Destroy this Bird 2 seconds after
     private void OnTriggerExit(Collider player)
     {
         if (player.CompareTag("Player"))

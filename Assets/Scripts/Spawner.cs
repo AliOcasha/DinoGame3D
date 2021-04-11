@@ -51,6 +51,12 @@ public class Spawner : MonoBehaviour
             int Pos = Posi.Next(-11, 11);
             O_Pos = new Vector3(O_nextSpawnPoint.x, O_nextSpawnPoint.y, Pos);
             Obstacle = Instantiate(Obstacles[ObstacleType], O_Pos, Quaternion.identity);
+            // Just the First Cactus of a Line has a Trigger
+            if (i != 1)
+            {
+                BoxCollider Trigger = Obstacle.GetComponent<BoxCollider>();
+                Trigger.enabled = false;
+            }
 
             // Only changing Spawnpoint after every obstacle is placed
             if (i == ObstacleCount)
@@ -72,11 +78,9 @@ public class Spawner : MonoBehaviour
         B_nextSpawnPoint = Vogel.transform.position + new Vector3(-500f, 0f, 0f);
     }
 
-    //Trigger Spawning on Same Position as a Obstacle Line
-
     private void Start()
     {
-        // Set Up Tiles, Obstacles and Triggers
+        // Set Up Tiles and Obstacles
         for (int i = 0; i < 12; i++)
         {
 
@@ -85,6 +89,7 @@ public class Spawner : MonoBehaviour
         }
     }
 
+    // Allow Bird Spawning after given Point
     private void FixedUpdate()
     {
         if (Player.transform.position.x <= -500 && Player.transform.position.x >= -500.5)

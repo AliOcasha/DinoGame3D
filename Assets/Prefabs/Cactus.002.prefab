@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8602968326567826610}
   m_Layer: 0
   m_Name: Cactus.002
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,5 +138,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 31.9, y: 5.2, z: 22.15}
+  m_Size: {x: 100, y: 5.2, z: 22.15}
   m_Center: {x: 0.16793899, y: 1.9, z: 11.075}
