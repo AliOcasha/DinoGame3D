@@ -27,10 +27,11 @@ public class PlayerMovement : MonoBehaviour
     // Processing Inputs
     private void Update()
     {
+        float GroundPos = -0.045f;
         // Getting Keyboard Input
         int Move_x = (int)Input.GetAxisRaw("Horizontal");
         // Forbidding Mid-Air Movement
-        if (transform.position.y <= -0.045)
+        if (transform.position.y <= GroundPos)
         {  
             //Processing Horizontal Input
             if (Move_x == 1)
@@ -62,8 +63,8 @@ public class PlayerMovement : MonoBehaviour
     {
         float Boundary = 12f;
         float JumpStrength = 100000f;
-        Vector3 side_Move = Vector3.up * direction * 75 / 4;
-        Vector3 forward_Move = Vector3.left * 75 / 4;
+        Vector3 side_Move = Vector3.up * direction * 18.75f;
+        Vector3 forward_Move = Vector3.left * 18.75f;
 
 
         // Movement, depending on Input, via Translation
@@ -79,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
             Jump = false;
         }
         
-        // Boundaries on Plane of Scale 2
+        // Boundaries on Ground
         if (transform.position.z <= -Boundary)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, -Boundary);
