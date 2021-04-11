@@ -5,18 +5,20 @@ using UnityEngine;
 public class Bird : MonoBehaviour
 {
     private Spawner BirdSpawner;
-
-    private Vector3 Movement = Vector3.right * 25;
+    private readonly Quaternion BaseRot = Quaternion.Euler(-90f, 90f, 0f);
+    private readonly Vector3 Movement = Vector3.down;
     private void Start()
     {
         // Get Spawner Script
         BirdSpawner = GameObject.FindObjectOfType<Spawner>();
+        // Set Rotation for Bird
+        transform.rotation = BaseRot;
     }
 
     private void FixedUpdate()
     {
         // No Matter What KEEP PUSHING BACKWARDS
-        gameObject.transform.Translate(Movement* Time.deltaTime);
+        gameObject.transform.Translate(Movement);
     }
     // Spawn Bird after Passing Player and  Destroy this Bird 2 seconds after
     private void OnTriggerExit(Collider player)

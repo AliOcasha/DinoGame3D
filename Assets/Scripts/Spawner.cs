@@ -10,11 +10,11 @@ public class Spawner : MonoBehaviour
     public GameObject Player;
 
     private readonly int Boundary = 11;
-    private readonly float[] BirdSpawnStart = { -500, -500.05f };
+    private readonly float[] BirdSpawnStart = { -500f, -500.5f };
 
     private Vector3 nextSpawnPoint = new Vector3(0f, -0.9f, 0f);
     private Vector3 O_nextSpawnPoint = new Vector3(-60f, -0.9f, 0f);
-    private Vector3 B_nextSpawnPoint = new Vector3 (-1000f, 3f, 0f);
+    private Vector3 B_nextSpawnPoint = new Vector3 (-1000f, 4f, 0f);
     private Vector3 O_Offset = new Vector3(-15f, 0f, 0f);
     private Vector3 B_Offset = new Vector3(-500f, 0f, 0f);
 
