@@ -159,7 +159,7 @@ MonoBehaviour:
   - {fileID: 5615991546572535859, guid: 56a009d03160b4e4492fa467ed4b4be1, type: 3}
   - {fileID: 753890952924682791, guid: f6617e76fce6cb545a6ed657bdbac72f, type: 3}
   - {fileID: 4995871914188167076, guid: e636e5b56b966ba47b8eba2c7c3a0326, type: 3}
-  Bird: {fileID: 1006153277941397821, guid: 91604aba46a61b34bb8398dd5eb0fdcb, type: 3}
+  Bird: {fileID: 5522144245939270954, guid: cf6fbec8cedca664d8e0e43bd7488ccf, type: 3}
   Player: {fileID: 882393037}
 --- !u!4 &656339313
 Transform:

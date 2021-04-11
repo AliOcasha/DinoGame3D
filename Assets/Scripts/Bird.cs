@@ -5,8 +5,8 @@ using UnityEngine;
 public class Bird : MonoBehaviour
 {
     private Spawner BirdSpawner;
-    private readonly Quaternion BaseRot = Quaternion.Euler(-90f, 90f, 0f);
-    private readonly Vector3 Movement = Vector3.down;
+    private readonly Quaternion BaseRot = Quaternion.Euler(0f, 90f, 0f);
+    private readonly Vector3 Movement = Vector3.up * 1.5f;
     private void Start()
     {
         // Get Spawner Script
