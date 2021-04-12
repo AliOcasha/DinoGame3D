@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour
 {
     public GameObject PauseButton;
+    public PauseButton Pause;
+
     private PlayerMovement Movement;
     private Animator Animator;
 
@@ -25,7 +27,8 @@ public class PlayerCollision : MonoBehaviour
         {
             Animator.SetBool("Walking", false);
             Movement.enabled = false;
-            PauseButton.SetActive(false);
+            //PauseButton.SetActive(false);
+            Pause.Pause();
         }
     }
 }

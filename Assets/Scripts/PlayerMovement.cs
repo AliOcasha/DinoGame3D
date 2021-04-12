@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
             }        
        
             // Processing Spacebar Input
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Alpha8))
             {
                 Jump = true;
             }

@@ -8,7 +8,7 @@ public class PauseButton : MonoBehaviour
     public Spawner Spawner;
     public PlayerMovement Player;
     public Animator PlayerAnimation;
-    public Text score;
+    public GameObject InGameMenu;
     public void Pause()
     {
         if (Spawner.enabled)
@@ -16,13 +16,14 @@ public class PauseButton : MonoBehaviour
             Spawner.enabled = false;
             Player.enabled = false;
             PlayerAnimation.enabled = false;
+            InGameMenu.SetActive(true);
         }
         else
         {
             Spawner.enabled = true;
             Player.enabled = true;
             PlayerAnimation.enabled = true;
-            score.color = new Color(22f, 9f, 9f, 255f);
+            InGameMenu.SetActive(false);
         }
 
     }
