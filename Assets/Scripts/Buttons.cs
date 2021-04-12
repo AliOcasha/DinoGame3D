@@ -6,31 +6,45 @@ using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour
 {
-    public Spawner Spawner;
     public PlayerMovement Player;
-    public Animator PlayerAnimation;
     public GameObject InGameMenu;
     public void Pause()
     {
-        if (Spawner.enabled)
+        if (Player.enabled)
         {
-            Spawner.enabled = false;
+            Time.timeScale = 0;
             Player.enabled = false;
-            PlayerAnimation.enabled = false;
-            InGameMenu.SetActive(true);
+            EnableMenu();
         }
         else
         {
-            Spawner.enabled = true;
-            Player.enabled = true;
-            PlayerAnimation.enabled = true;
+            Time.timeScale = 1;
             InGameMenu.SetActive(false);
+            Player.enabled = true;
         }
+        //if (Spawner.enabled)
+        //{
+        //    Spawner.enabled = false;
+        //    Player.enabled = false;
+        //    PlayerAnimation.enabled = false;
+        //    InGameMenu.SetActive(true);
+        //}
+        //else
+        //{
+        //    Spawner.enabled = true;
+        //    Player.enabled = true;
+        //    PlayerAnimation.enabled = true;
+        //    InGameMenu.SetActive(false);
+        //}
 
     }
-
     public void Reload()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
+    }
+    public void EnableMenu()
+    {
+        InGameMenu.SetActive(true);
     }
 }

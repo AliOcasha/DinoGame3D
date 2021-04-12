@@ -28,7 +28,7 @@ public class PlayerCollision : MonoBehaviour
             PauseButton.SetActive(false);
             Animator.SetBool("Walking", false);
             Movement.enabled = false;
-            Pause.Pause();
+            Pause.EnableMenu();
             
         }
     }
