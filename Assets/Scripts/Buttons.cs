@@ -47,4 +47,9 @@ public class Buttons : MonoBehaviour
     {
         InGameMenu.SetActive(true);
     }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
 }
