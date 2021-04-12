@@ -22,6 +22,7 @@ public class Spawner : MonoBehaviour
     private readonly System.Random O_Count = new System.Random();
     private readonly System.Random Posi = new System.Random();
     private readonly System.Random PosB = new System.Random();
+    private readonly System.Random B_Count = new System.Random();
     
     // Tile Spawning
     public void SpawnTile()
@@ -68,12 +69,18 @@ public class Spawner : MonoBehaviour
     public void SpawnBird()
     {
         GameObject Vogel;
-        int Pos = PosB.Next(-Boundary, Boundary);
-        Vector3 B_Pos = new Vector3(B_nextSpawnPoint.x, B_nextSpawnPoint.y, Pos);
-
-        Vogel = Instantiate(Bird, B_Pos, Quaternion.identity);
-
-        B_nextSpawnPoint = Vogel.transform.position + B_Offset;
+        Vector3 B_Pos;
+        int BirdCount = B_Count.Next(1, 3);
+        for (int i = 1; i <= BirdCount; i++)
+        {
+            int Pos = PosB.Next(-Boundary, Boundary);
+            B_Pos = new Vector3(B_nextSpawnPoint.x, B_nextSpawnPoint.y, Pos);
+            Vogel = Instantiate(Bird, B_Pos, Quaternion.identity);
+            if (i == BirdCount)
+            {
+                B_nextSpawnPoint = Vogel.transform.position + B_Offset;
+            }
+        }
     }
 
     private void Start()

@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         float Boundary = 12f;
-        float JumpStrength = 100000f;
+        float JumpStrength = 1500f;
         Vector3 side_Move = Vector3.up * direction * 18.75f;
         Vector3 forward_Move = Vector3.left * 18.75f;
 
@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
         // Jump via Force
         else if (Jump == true)
         {
-            PlayerRb.AddForce(0f, JumpStrength * Time.deltaTime, 0f);
+            PlayerRb.AddForce(0f, JumpStrength * Time.deltaTime, 0f, ForceMode.Impulse);
             Jump = false;
         }
         
