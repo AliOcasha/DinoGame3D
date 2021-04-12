@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class PauseButton : MonoBehaviour
+public class Buttons : MonoBehaviour
 {
     public Spawner Spawner;
     public PlayerMovement Player;
@@ -26,5 +27,10 @@ public class PauseButton : MonoBehaviour
             InGameMenu.SetActive(false);
         }
 
+    }
+
+    public void Reload()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

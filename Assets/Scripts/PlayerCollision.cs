@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour
 {
     public GameObject PauseButton;
-    public PauseButton Pause;
+    public Buttons Pause;
 
     private PlayerMovement Movement;
     private Animator Animator;
@@ -25,10 +25,11 @@ public class PlayerCollision : MonoBehaviour
         // If it collides it something other then the ground the PlayerMovement is disabled and the Animation stopped
         if (collision.collider.CompareTag("Obstacle"))
         {
+            PauseButton.SetActive(false);
             Animator.SetBool("Walking", false);
             Movement.enabled = false;
-            //PauseButton.SetActive(false);
             Pause.Pause();
+            
         }
     }
 }
