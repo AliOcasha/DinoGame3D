@@ -6,8 +6,8 @@ public class Bird : MonoBehaviour
 {
     private Spawner BirdSpawner;
     private Animator Animator;
-    private readonly Quaternion BaseRot = Quaternion.Euler(0f, 90f, 0f);
-    private readonly Vector3 Movement = Vector3.forward * 1.5f;
+    private readonly Quaternion BaseRot = Quaternion.Euler(-90f, 90f, 0f);
+    private readonly Vector3 Movement = Vector3.down * 1.5f;
     private void Start()
     {
         // Get Spawner Script

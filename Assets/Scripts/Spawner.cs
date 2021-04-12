@@ -12,9 +12,9 @@ public class Spawner : MonoBehaviour
     private readonly int Boundary = 11;
     private readonly float[] BirdSpawnStart = { -500f, -500.5f };
 
-    private Vector3 nextSpawnPoint = new Vector3(0f, -0.9f, 0f);
-    private Vector3 O_nextSpawnPoint = new Vector3(-60f, -0.9f, 0f);
-    private Vector3 B_nextSpawnPoint = new Vector3 (-1000f, 4f, 0f);
+    private Vector3 nextSpawnPoint = Vector3.zero;
+    private Vector3 O_nextSpawnPoint = new Vector3(-60f, 0f, 0f);
+    private Vector3 B_nextSpawnPoint = new Vector3 (-1000f, 6f, 0f);
     private Vector3 O_Offset = new Vector3(-15f, 0f, 0f);
     private Vector3 B_Offset = new Vector3(-500f, 0f, 0f);
 
@@ -56,13 +56,6 @@ public class Spawner : MonoBehaviour
             int Pos = Posi.Next(-Boundary, Boundary);
             O_Pos = new Vector3(O_nextSpawnPoint.x, O_nextSpawnPoint.y, Pos);
             Obstacle = Instantiate(Obstacles[ObstacleType], O_Pos, Quaternion.identity);
-            // Just the First Cactus of a Line has a Trigger
-            if (i != 1)
-            {
-                BoxCollider Trigger = Obstacle.GetComponent<BoxCollider>();
-                Trigger.enabled = false;
-            }
-
             // Only changing Spawnpoint after every obstacle is placed
             if (i == ObstacleCount)
             {

@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private bool Movement_x = false;
     private bool Jump = false;
     private int direction = 0;
-    private Vector3 BasPos = new Vector3(0f, -0.8f, 0f);
+    private Vector3 BasPos = new Vector3(0f, 0.8f, 0f);
     private Quaternion BasRot = Quaternion.Euler(-90f, 0f, 0f);
 
     private void Start()
@@ -27,11 +27,10 @@ public class PlayerMovement : MonoBehaviour
     // Processing Inputs
     private void Update()
     {
-        float GroundPos = -0.045f;
         // Getting Keyboard Input
         int Move_x = (int)Input.GetAxisRaw("Horizontal");
         // Forbidding Mid-Air Movement
-        if (transform.position.y <= GroundPos)
+        if (transform.position.y <= 0)
         {  
             //Processing Horizontal Input
             if (Move_x == 1)

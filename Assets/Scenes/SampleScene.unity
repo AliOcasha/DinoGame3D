@@ -154,11 +154,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Ground: {fileID: 592464227117632348, guid: 7a8ea7d2e138ac040a989df0b59c1840, type: 3}
   Obstacles:
-  - {fileID: 436833168537854350, guid: afc47d3429ec9f74b977270266a75906, type: 3}
-  - {fileID: 8117027634449195778, guid: fd49a0368152b674d94e1eb1bbdf006e, type: 3}
-  - {fileID: 5615991546572535859, guid: 56a009d03160b4e4492fa467ed4b4be1, type: 3}
-  - {fileID: 753890952924682791, guid: f6617e76fce6cb545a6ed657bdbac72f, type: 3}
-  - {fileID: 4995871914188167076, guid: e636e5b56b966ba47b8eba2c7c3a0326, type: 3}
+  - {fileID: 6548860078287847843, guid: afc47d3429ec9f74b977270266a75906, type: 3}
+  - {fileID: 1564732005983874702, guid: fd49a0368152b674d94e1eb1bbdf006e, type: 3}
+  - {fileID: 7022397751625959647, guid: 56a009d03160b4e4492fa467ed4b4be1, type: 3}
+  - {fileID: 1668864058814625946, guid: f6617e76fce6cb545a6ed657bdbac72f, type: 3}
+  - {fileID: 8806145836085781032, guid: e636e5b56b966ba47b8eba2c7c3a0326, type: 3}
   Bird: {fileID: 5522144245939270954, guid: cf6fbec8cedca664d8e0e43bd7488ccf, type: 3}
   Player: {fileID: 882393037}
 --- !u!4 &656339313
@@ -490,7 +490,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.0843369, y: -0.7020593, z: 0.0843369, w: 0.7020593}
-  m_LocalPosition: {x: 4.4, y: 2.5, z: 0}
+  m_LocalPosition: {x: 4.4, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -509,4 +509,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 882393043}
-  offset: {x: 4.4, y: 2.5, z: 0}
+  offset: {x: 4.4, y: 3, z: 0}
