@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour
 {
     public PlayerMovement Player;
     public GameObject InGameMenu;
+    public UIBackEnd BackEnd;
     public void Pause()
     {
         if (Player.enabled)
@@ -37,4 +35,6 @@ public class Buttons : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
+
+
 }

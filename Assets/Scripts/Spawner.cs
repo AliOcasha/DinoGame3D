@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -23,7 +21,7 @@ public class Spawner : MonoBehaviour
     private readonly System.Random Posi = new System.Random();
     private readonly System.Random PosB = new System.Random();
     private readonly System.Random B_Count = new System.Random();
-    
+
     // Tile Spawning
     public void SpawnTile()
     {
@@ -100,6 +98,7 @@ public class Spawner : MonoBehaviour
         {
             SpawnBird();
         }
+        transform.position = Player.transform.position;
     }
 }
   

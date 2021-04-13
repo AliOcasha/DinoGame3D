@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
+    public SFX Sfx;
     public GameObject PauseButton;
     public Buttons Pause;
 
@@ -29,7 +30,7 @@ public class PlayerCollision : MonoBehaviour
             Animator.SetBool("Walking", false);
             Movement.enabled = false;
             Pause.EnableMenu();
-            
+            Sfx.PlayCactusCollision();
         }
     }
 }

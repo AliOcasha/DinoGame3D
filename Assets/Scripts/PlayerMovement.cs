@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public SFX Sfx;
     private Rigidbody PlayerRb;
     private bool Movement_x = false;
     private bool Jump = false;
     private int direction = 0;
     private Vector3 BasPos = new Vector3(0f, 0.8f, 0f);
     private Quaternion BasRot = Quaternion.Euler(-90f, 0f, 0f);
-
     private void Start()
     {
         // Getting Rigidbody Component
@@ -60,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
     // Applying Physics and Movements
     private void FixedUpdate()
     {
+
         float Boundary = 12f;
         float JumpStrength = 1500f;
         Vector3 side_Move = Vector3.up * direction * 18.75f;
@@ -90,5 +91,6 @@ public class PlayerMovement : MonoBehaviour
         }
         // No Matter What KEEP PUSHING FORWARD
         transform.Translate(forward_Move * Time.deltaTime);
+        Sfx.PlaySteps();
     }
 }
