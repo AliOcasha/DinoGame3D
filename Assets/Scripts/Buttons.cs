@@ -22,21 +22,6 @@ public class Buttons : MonoBehaviour
             InGameMenu.SetActive(false);
             Player.enabled = true;
         }
-        //if (Spawner.enabled)
-        //{
-        //    Spawner.enabled = false;
-        //    Player.enabled = false;
-        //    PlayerAnimation.enabled = false;
-        //    InGameMenu.SetActive(true);
-        //}
-        //else
-        //{
-        //    Spawner.enabled = true;
-        //    Player.enabled = true;
-        //    PlayerAnimation.enabled = true;
-        //    InGameMenu.SetActive(false);
-        //}
-
     }
     public void Reload()
     {
