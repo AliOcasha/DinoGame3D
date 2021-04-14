@@ -4,10 +4,10 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     public GameObject Player;
+    public float score;
 
     private Text Ausgabe;
-    private float score;
-
+    
     private void Start()
     {
         // getting Text Object
