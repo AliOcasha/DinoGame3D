@@ -21,5 +21,13 @@ public class Obstacle : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
 
 }

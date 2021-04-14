@@ -13,7 +13,7 @@ public class Spawner : MonoBehaviour
     private Vector3 nextSpawnPoint = Vector3.zero;
     private Vector3 O_nextSpawnPoint = new Vector3(-60f, 0f, 0f);
     private Vector3 B_nextSpawnPoint = new Vector3 (-1000f, 6f, 0f);
-    private Vector3 O_Offset = new Vector3(-15f, 0f, 0f);
+    private Vector3 O_Offset = new Vector3(-5f, 0f, 0f);
     private Vector3 B_Offset = new Vector3(-500f, 0f, 0f);
 
     private readonly System.Random O_Typ = new System.Random();
@@ -42,11 +42,11 @@ public class Spawner : MonoBehaviour
         // Setting Amount of Obstacles in a Line depending on Type
         if (ObstacleType == 4)
         {
-            ObstacleCount = O_Count.Next(1, 4);
+            ObstacleCount = O_Count.Next(3, 6);
         }
         else
         {
-            ObstacleCount = O_Count.Next(3, 6);
+            ObstacleCount = O_Count.Next(4, 8);
         }
         
         // Spawning Obstacles in current Line on random positions
@@ -85,7 +85,7 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         // Set Up Starting Tiles and Obstacles
-        for (int i = 0; i < 12; i++)
+        for (int i = 0; i < 24; i++)
         {
             SpawnTile();
             SpawnObstacle();

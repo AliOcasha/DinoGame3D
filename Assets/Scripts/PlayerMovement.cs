@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private int direction = 0;
     private Vector3 BasPos = new Vector3(0f, 0.8f, 0f);
     private Quaternion BasRot = Quaternion.Euler(-90f, 0f, 0f);
-    private readonly int Move_x = (int)Input.GetAxisRaw("Horizontal");
+    private int Move_x;
     private readonly float Boundary = 12f;
     private readonly float JumpStrength = 1500f;
     private Vector3 side_Move;
@@ -29,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
     // Processing Inputs
     private void Update()
     {
+        // Get Horizontal Input
+        Move_x = (int)Input.GetAxisRaw("Horizontal");
         // Forbidding Mid-Air Movement
         if (transform.position.y <= 0)
         {  

@@ -42,5 +42,10 @@ public class Bird : MonoBehaviour
         {
             Animator.SetBool("Flying", true);
         }
+
+        if(collision.collider.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
