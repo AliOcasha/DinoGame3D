@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bird : MonoBehaviour
@@ -33,6 +31,7 @@ public class Bird : MonoBehaviour
         }
 
     }
+    // Stop Animation when hit by Player
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Player"))

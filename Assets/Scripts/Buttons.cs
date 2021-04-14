@@ -6,6 +6,7 @@ public class Buttons : MonoBehaviour
     public PlayerMovement Player;
     public GameObject InGameMenu;
     public UIBackEnd BackEnd;
+    // Pausing Game and enabling InGame Menu
     public void Pause()
     {
         if (Player.enabled)
@@ -21,16 +22,18 @@ public class Buttons : MonoBehaviour
             Player.enabled = true;
         }
     }
+    // Reloading Scene
     public void Reload()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
     }
+    // Enabling InGame Menu
     public void EnableMenu()
     {
         InGameMenu.SetActive(true);
     }
-
+    // Back to Start Menu
     public void MainMenu()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);

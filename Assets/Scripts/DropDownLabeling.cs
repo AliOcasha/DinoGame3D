@@ -7,10 +7,12 @@ public class DropDownLabeling : MonoBehaviour
 
     private void Start()
     {
+        // Getting Text Component
         LabelText = gameObject.GetComponent<Text>();
     }
-    private void Update()
+    private void FixedUpdate()
     {
+        // changing the Text Label depending on Value 
         switch(Label.value)
         {
             case 0:

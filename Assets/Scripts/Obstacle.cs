@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Obstacle : MonoBehaviour
@@ -15,6 +13,7 @@ public class Obstacle : MonoBehaviour
     }
     private void OnTriggerExit(Collider player)
     {
+        // Spawning new Obstacles when Player exits Trigger and delete given one
         if (player.CompareTag("Player"))
         {
             ObstacleSpawner.SpawnObstacle();

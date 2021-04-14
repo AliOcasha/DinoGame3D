@@ -74,6 +74,7 @@ public class Spawner : MonoBehaviour
             int Pos = PosB.Next(-Boundary, Boundary);
             B_Pos = new Vector3(B_nextSpawnPoint.x, B_nextSpawnPoint.y, Pos);
             Vogel = Instantiate(Bird, B_Pos, Quaternion.identity);
+            // Only changing Spawnpoint after every bird is placed
             if (i == BirdCount)
             {
                 B_nextSpawnPoint = Vogel.transform.position + B_Offset;
@@ -83,7 +84,7 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        // Set Up Tiles and Obstacles
+        // Set Up Starting Tiles and Obstacles
         for (int i = 0; i < 12; i++)
         {
             SpawnTile();
@@ -91,7 +92,7 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    // Allow Bird Spawning after given Point
+    // Allow Bird Spawning after given Point and moving Spawner with Player
     private void FixedUpdate()
     {
         if (Player.transform.position.x <= BirdSpawnStart[0] && Player.transform.position.x >= BirdSpawnStart[1])

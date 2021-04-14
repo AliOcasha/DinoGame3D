@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
@@ -23,14 +21,17 @@ public class PlayerCollision : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        // If it collides it something other then the ground the PlayerMovement is disabled and the Animation stopped
+        // If it collides
         if (collision.collider.CompareTag("Obstacle"))
         {
+            // UI is deactivated
             PauseButton.SetActive(false);
+            // Stoping Dinosaur and Collision Sound
             Animator.SetBool("Walking", false);
-            Movement.enabled = false;
-            Pause.EnableMenu();
             Sfx.PlayCactusCollision();
+            Movement.enabled = false;
+            // Enabling Menu
+            Pause.EnableMenu();
         }
     }
 }

@@ -3,7 +3,9 @@ using UnityEngine.Audio;
 
 public class UIBackEnd : MonoBehaviour
 {
-    public AudioMixer Audio;    
+    public AudioMixer Audio;
+    
+    //Setting exposed Paramtes via Slider
     public void SetVolume(float volume)
     {
         Audio.SetFloat("Master", volume);
@@ -19,6 +21,7 @@ public class UIBackEnd : MonoBehaviour
         Audio.SetFloat("Music", volume);
     }
 
+    //Setting Graphics Quality via Dropdown 
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
