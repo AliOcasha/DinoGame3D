@@ -7,8 +7,6 @@ public class Highscore : MonoBehaviour
     public Score score;
 
     private Text Ausgabe;
-
-    private float highscore;
     private void Start()
     {
         Ausgabe = gameObject.GetComponent<Text>();
