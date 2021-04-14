@@ -1711,6 +1711,7 @@ GameObject:
   m_Component:
   - component: {fileID: 588175027}
   - component: {fileID: 588175028}
+  - component: {fileID: 588175029}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -1754,6 +1755,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OptionsMenu: {fileID: 1110686139}
+--- !u!114 &588175029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588175026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa15cc596613e04e8165ca564755680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Audio: {fileID: 24100000, guid: 6bf9fb11e7764c54bb980b6a3927a455, type: 2}
 --- !u!1 &596466115
 GameObject:
   m_ObjectHideFlags: 0
@@ -2174,7 +2188,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.7735849, g: 0.6942862, b: 0.4780171, a: 1}
+  m_Color: {r: 1, g: 0.84967834, b: 0.4292453, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30

@@ -17,6 +17,6 @@ public class Distance : MonoBehaviour
     {
         // Setting Score depending on Player position
         distance = -Player.transform.position.x;
-        Ausgabe.text = "Distance: " + distance.ToString("0");
+        Ausgabe.text = "Distance: " + distance.ToString("0") + " m";
     }
 }

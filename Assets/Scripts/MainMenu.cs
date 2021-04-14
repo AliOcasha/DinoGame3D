@@ -4,6 +4,12 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public GameObject OptionsMenu;
+    private UIBackEnd BackEnd;
+
+    private void Start()
+    {
+        BackEnd = gameObject.GetComponent<UIBackEnd>();
+    }
     // Starting Game
     public void Play()
     {
@@ -15,6 +21,7 @@ public class MainMenu : MonoBehaviour
     // Quit Application ( works just in finished Build not in Editor)
     public void Quit()
     {
+        BackEnd.SetQuality(2);
         Application.Quit();
     }
 
