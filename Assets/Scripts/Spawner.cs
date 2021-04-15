@@ -68,7 +68,7 @@ public class Spawner : MonoBehaviour
     {
         GameObject Vogel;
         Vector3 B_Pos;
-        int BirdCount = B_Count.Next(1, 3);
+        int BirdCount = B_Count.Next(1, 6);
         for (int i = 1; i <= BirdCount; i++)
         {
             int Pos = PosB.Next(-Boundary, Boundary);
