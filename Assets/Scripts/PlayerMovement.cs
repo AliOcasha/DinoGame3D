@@ -13,7 +13,9 @@ public class PlayerMovement : MonoBehaviour
     private readonly float Boundary = 12f;
     private readonly float JumpStrength = 1500f;
     private Vector3 side_Move;
-    private Vector3 forward_Move = Vector3.left * 18.75f;
+    private Vector3 forward_Move = Vector3.left * 16.75f;
+    private readonly float VelInc = 0.000185f;
+    private readonly float MaxSpeed = 40f;
     private void Start()
     {
         // Getting Rigidbody Component
@@ -63,6 +65,11 @@ public class PlayerMovement : MonoBehaviour
     {
         // Getting side Movement direction
          side_Move = Vector3.up * direction * 18.75f;
+        // Setting forward Movement Increase
+        if (forward_Move.x <= MaxSpeed)
+        {
+            forward_Move.x -= VelInc;
+        }
         // Movement, depending on Input, via Translation
         if (Movement_x == true)
         {
