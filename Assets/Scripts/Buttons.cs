@@ -46,6 +46,4 @@ public class Buttons : MonoBehaviour
             Pause();
         }
     }
-
-
 }
