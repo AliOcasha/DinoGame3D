@@ -5,7 +5,8 @@ public class UIBackEnd : MonoBehaviour
 {
     public AudioMixer Audio;
     
-    //Setting exposed Paramtes via Slider
+    //Setting exposed Parameters via Slider
+    // Getting current Parameter
     public void SetVolume(float volume)
     {
         Audio.SetFloat("Master", volume);
@@ -43,5 +44,10 @@ public class UIBackEnd : MonoBehaviour
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
+    }
+    //Setting Fullscreen
+    public void SetFullscreen(bool isFullscreen)
+    {
+        Screen.fullScreen = isFullscreen;
     }
 }
