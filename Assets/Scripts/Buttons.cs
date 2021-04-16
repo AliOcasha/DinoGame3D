@@ -39,6 +39,11 @@ public class Buttons : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
+    private void Start()
+    {
+        Time.timeScale = 0;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
