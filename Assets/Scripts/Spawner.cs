@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour
     public GameObject Player;
 
     private readonly int Boundary = 11;
-    private readonly float[] BirdSpawnStart = { -500f, -500.5f };
+    private readonly float[] BirdSpawnStart = { -700f, -700.5f };
 
     private Vector3 nextSpawnPoint = Vector3.zero;
     private Vector3 O_nextSpawnPoint = new Vector3(-60f, 0f, 0f);

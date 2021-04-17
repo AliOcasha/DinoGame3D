@@ -15,7 +15,7 @@ public class UIBackEnd : MonoBehaviour
     
     public float GetVolume()
     {
-        return PlayerPrefs.GetFloat("Master", -50);
+        return PlayerPrefs.GetFloat("Master", -15);
     }
 
     public void SetSFX(float volume)
@@ -26,7 +26,7 @@ public class UIBackEnd : MonoBehaviour
 
     public float GetSFX()
     {
-        return PlayerPrefs.GetFloat("SFX", -50);
+        return PlayerPrefs.GetFloat("SFX", -15);
     }
 
     public void SetMusic(float volume)
@@ -37,7 +37,7 @@ public class UIBackEnd : MonoBehaviour
 
     public float GetMusic()
     {
-        return PlayerPrefs.GetFloat("Music", -50);
+        return PlayerPrefs.GetFloat("Music", -15);
     }
 
     //Setting Graphics Quality via Dropdown 
