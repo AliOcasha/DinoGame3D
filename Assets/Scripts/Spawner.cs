@@ -54,7 +54,7 @@ public class Spawner : MonoBehaviour
         {
             int Pos = Posi.Next(-Boundary, Boundary);
             O_Pos = new Vector3(O_nextSpawnPoint.x, O_nextSpawnPoint.y, Pos);
-            Obstacle = Instantiate(Obstacles[ObstacleType], O_Pos, Quaternion.identity);
+            Obstacle = Instantiate(Obstacles[ObstacleType], O_Pos, Quaternion.Euler(-90f, 90f, 0f));
             // Only changing Spawnpoint after every obstacle is placed
             if (i == ObstacleCount)
             {
