@@ -7,6 +7,7 @@ public class Obstacle : MonoBehaviour
     
     private void Start()
     {
+        // Getting Spawner
         ObstacleSpawner = GameObject.FindObjectOfType<Spawner>();
         // Setting Up Obstacle Position
         transform.rotation = BaseRot;
@@ -21,6 +22,7 @@ public class Obstacle : MonoBehaviour
         }
     }
 
+    // Forbidding Intersecting Cacti
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Obstacle"))

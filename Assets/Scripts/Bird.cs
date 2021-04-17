@@ -31,7 +31,7 @@ public class Bird : MonoBehaviour
         }
 
     }
-    // Stop Animation when hit by Player
+    // Stop Animation when hit by Player and Forbid Intersecting Birds
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Player"))

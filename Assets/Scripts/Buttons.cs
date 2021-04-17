@@ -39,11 +39,13 @@ public class Buttons : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
+    // Start Game Paused
     private void Start()
     {
         Time.timeScale = 0;
     }
 
+    // Hook ESC Key with Pause Function
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))

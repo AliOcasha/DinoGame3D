@@ -1,23 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 public class Countdown : MonoBehaviour
 {
-    private TMP_Text Text;
     public Button PauseButton;
+
+    private TMP_Text Text;
     private int Counter = 0;
-    // Start is called before the first frame update
     private void Start()
     {
+        // Get Text Object // TextMesh Pro
         Text = gameObject.GetComponent<TMP_Text>();
+        //Show 3 at First and disable Pause Button from being clickable
         Text.text = "3";
         PauseButton.interactable = false;
     }
 
-    // Update is called once per frame
+    // Counting Down every 60 Frames until 3 seconds pass and destroy the Countdown Text Object
     private void Update()
     {
         if (Counter < 60)
