@@ -9,4 +9,9 @@ public class OptionsMenu : MonoBehaviour
         gameObject.SetActive(false);
         MainMenu.SetActive(true);
     }
+
+    public void ResetHighscore()
+    {
+        PlayerPrefs.SetInt("Highscore", 0);
+    }
 }

@@ -48,6 +48,30 @@ public class UIBackEnd : MonoBehaviour
     //Setting Fullscreen
     public void SetFullscreen(bool isFullscreen)
     {
+        int Fullscreen;
+        if (isFullscreen)
+        {
+            Fullscreen = 1;
+        }
+        else
+        {
+            Fullscreen = 0;
+        }
         Screen.fullScreen = isFullscreen;
+        PlayerPrefs.SetInt("Fullscreen", Fullscreen);
+    }
+    // Getting Fullscreen Settings
+    public bool GetFullscreen()
+    {
+        bool isFullscreen;
+        if (PlayerPrefs.GetInt("Fullscreen",1) == 1)
+        {
+            isFullscreen = true;
+        }
+        else
+        {
+            isFullscreen = false;
+        }
+        return isFullscreen;
     }
 }

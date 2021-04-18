@@ -13,7 +13,7 @@ public class Spawner : MonoBehaviour
     private Vector3 nextSpawnPoint = Vector3.zero;
     private Vector3 O_nextSpawnPoint = new Vector3(-60f, 0f, 0f);
     private Vector3 B_nextSpawnPoint = new Vector3 (-1000f, 6f, 0f);
-    private Vector3 O_Offset = new Vector3(-10f, 0f, 0f);
+    private Vector3 O_Offset = new Vector3(-5f, 0f, 0f);
     private Vector3 B_Offset = new Vector3(-500f, 0f, 0f);
 
     private readonly System.Random O_Typ = new System.Random();

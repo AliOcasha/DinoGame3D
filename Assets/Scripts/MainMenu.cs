@@ -22,6 +22,8 @@ public class MainMenu : MonoBehaviour
     public void Quit()
     {
         BackEnd.SetQuality(2);
+        gameObject.SetActive(true);
+        OptionsMenu.SetActive(false);
         Application.Quit();
     }
 
