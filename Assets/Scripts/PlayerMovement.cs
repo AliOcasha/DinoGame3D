@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         // Getting side Movement direction
-         side_Move = Vector3.up * direction * 18.75f;
+         side_Move = Vector3.up * direction * 16.75f;
         // Setting forward Movement Increase
         if (forward_Move.x <= MaxSpeed)
         {
