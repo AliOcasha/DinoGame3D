@@ -5,6 +5,7 @@ Thats my fourth Game overall and my first one with Unity.
 
 ## __How to install?__
 In the repo you have the main branch with the files and folders needed for *Unity*. So you can either clone it and start it in Unity to make your changes and build it on your on.  
+
 Or you can jump to the Build branch where I stored the *executable* along with the needed files and folders. This you can just download in a folder or as a zip and simply click the .exe and have fun!
 ## __How to play?__
 
