@@ -17,3 +17,4 @@ __is to get as far as possible without coliding with the cacti or the Pterosauru
 
 ## *any questions or ideas?*
 Then join our discussion! I will try to answer everyone and here you can share your opinion and experiences with other people.
+The Models used are avaible on : https://www.cgtrader.com/3d-models/various/various-models/dino-jump-3d-models-and-textures
