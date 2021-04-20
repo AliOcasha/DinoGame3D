@@ -16,5 +16,5 @@ By Pressing w or the up arrow key you can _Jump_, but be careful you cant move m
 __is to get as far as possible without coliding with the cacti or the Pterosaurus in the air, while the Dinosaur has the Run of his Live.__  
 
 ## *any questions or ideas?*
-Then join our discussion! I will try to answer everyone and here you can share your opinion and experiences with other people.
+Then join our discussion! I will try to answer everyone and here you can share your opinion and experiences with other people.  
 The Models used are avaible on : https://www.cgtrader.com/3d-models/various/various-models/dino-jump-3d-models-and-textures
