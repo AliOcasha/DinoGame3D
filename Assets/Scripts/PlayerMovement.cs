@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private readonly float JumpStrength = 1500f;
     private Vector3 side_Move;
     private Vector3 forward_Move = Vector3.left * 16.75f;
-    private readonly float VelInc = 0.000185f;
+    private readonly float VelInc = 0.0004625f;
     private readonly float MaxSpeed = 40f;
     private void Start()
     {
