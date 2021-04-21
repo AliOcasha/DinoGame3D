@@ -38,10 +38,6 @@ public class Bird : MonoBehaviour
         {
             Animator.SetBool("Flying", false);
         }
-        else
-        {
-            Animator.SetBool("Flying", true);
-        }
 
         if(collision.collider.CompareTag("Obstacle"))
         {
