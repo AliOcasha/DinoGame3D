@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.Alpha2))
         {
             Jump = true;
-            direction = -0.5f;
+            direction = -0.25f;
         }
     }
 
